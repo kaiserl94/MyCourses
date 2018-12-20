@@ -1,1 +1,1 @@
-DEBUG=415Website:* nodemon
+DEBUG=MyCourses:* nodemon

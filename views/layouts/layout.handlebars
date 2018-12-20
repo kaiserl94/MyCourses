@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,600,700" rel="stylesheet">
+		<!-- Latest compiled and minified JavaScript & jQuery-->
+		<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		<nav>
+			<div class="brand"></div>
+			{{#if user}}
+			<div class="user-info">
+				<h1>Welcome,</h1>
+				<h1>{{user.fname}} {{user.lname}}</h1>
+			</div>
+			{{/if}}
+			<ul>
+				<li>Navigation</li>
+				{{#if user.student}}
+				<a href="/" class="nav-btn home {{#if data.home}}active{{/if}}"><li>home</li></a>
+				<a href="/timetable" class="nav-btn dash {{#if data.timetable}}active{{/if}}"><li>Timetable</li></a>
+				<a href="/transcript" class="nav-btn transcript {{#if data.transcript}}active{{/if}}"><li>My Transcript</li></a>
+				<a href="/courses" class="nav-btn courses {{#if data.courses}}active{{/if}}"><li>Courses</li></a>
+				{{/if}}
+				{{#if user.teacher}}
+				<a href="/course-manager" class="nav-btn course-manager {{#if data.courseMngr}}active{{/if}}"><li>Course Manager</li></a>
+				{{/if}}
+				{{#if user.admin}}
+				<a href="/admin" class="nav-btn dash {{#if data.admin}}active{{/if}}"><li>Admin Panel</li></a>
+				{{/if}}
+			</ul>
+			<div class="login">
+				{{#if user}}
+				<a href="/u/logout" style="margin: 0 auto; float: none;">Log Out</a>
+				{{else}}
+				<a href="/u/login">Log In</a>
+				<a href="/u/register">Sign Up</a>
+				{{/if}}
+			</div>
+		</nav>
+		<div class="content">
+			{{{ body }}}
+		</div>
+		<script src="../javascripts/fadeContent.js"></script>
+	</body>
+</html>

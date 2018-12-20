@@ -1,0 +1,18 @@
+<h1 class="page-header">Course Manager</h1>
+
+<div class="inner-content transparent">
+	<div class="semester-info">
+	</div>
+	{{#each data as |student|}}
+	<form method="post" action="/course-manager/{{student.course_code}}" class="form">
+		<div class="card grade-card">
+			<h1>Student: {{student.username}}</h1>
+			<label>Grade:</label>
+			<input type="number" min="0" max="100" step="0.1" name="grade" value="{{student.grade}}"/>
+			<input type="text" name="userID" value="{{student.userID}}" class="hidden"/>
+			<input type="text" name="course" value="{{student.course_code}}" class="hidden"/>
+			<button type="submit" class="submit-button">Submit Grade</button>
+		</div>
+	</form>
+	{{/each}}
+</div>

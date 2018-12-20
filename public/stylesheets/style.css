@@ -1,0 +1,771 @@
+.transition, nav ul a, nav .login a, .page-header .change-term ul li.has-dropdown ul.dropdown li, .course-description .close-btn, .card h1, .teacher-card a, .login-form .submit-button, .reg-form .submit-button, .form .submit-button, .add-class button, .search-btn, .timetable-card .card-body h1 {
+  transition: all 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1); }
+
+.slow-transition, .inner-content {
+  transition: all 0.75s ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1); }
+
+.box-shadow, nav, nav .login a:hover, .page-header .change-term ul li.has-dropdown ul.dropdown, .course-description, .add-class button:hover, .search-btn:hover {
+  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.02), 0px 8px 10px 1px rgba(0, 0, 0, 0.02), 0px 3px 14px 2px rgba(0, 0, 0, 0.02);
+  -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.02), 0px 8px 10px 1px rgba(0, 0, 0, 0.02), 0px 3px 14px 2px rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.02), 0px 8px 10px 1px rgba(0, 0, 0, 0.02), 0px 3px 14px 2px rgba(0, 0, 0, 0.02); }
+
+.box-shadow-dark {
+  -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.3), 0px 8px 10px 1px rgba(0, 0, 0, 0.3), 0px 3px 14px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.3), 0px 8px 10px 1px rgba(0, 0, 0, 0.3), 0px 3px 14px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.3), 0px 8px 10px 1px rgba(0, 0, 0, 0.3), 0px 3px 14px 2px rgba(0, 0, 0, 0.3); }
+
+button {
+  outline: 0; }
+  button:hover, button:active, button:focus {
+    outline: 0; }
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background: #ebf1f5;
+  color: #293241; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  color: #47bac1;
+  text-decoration: none; }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #4e515e;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset; }
+
+.header-brand {
+  background-color: #47bac1;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  float: left;
+  width: 100%;
+  height: 75px;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+nav {
+  width: 260px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: #354052; }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left; }
+    nav ul li {
+      padding-left: 20px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+      margin-bottom: 6px;
+      opacity: 0.3; }
+    nav ul .nav-btn {
+      position: relative; }
+      nav ul .nav-btn::before {
+        content: "";
+        display: block;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        left: 20px;
+        background-position: center; }
+    nav ul .home::before {
+      background-image: url("../images/home.svg"); }
+    nav ul .transcript::before {
+      background-image: url("../images/transcript.svg"); }
+    nav ul .courses::before {
+      background-image: url("../images/courses.svg"); }
+    nav ul .course-manager::before {
+      background-image: url("../images/calender.svg"); }
+    nav ul .dash::before {
+      background-image: url("../images/dashboard.svg"); }
+    nav ul a {
+      display: block;
+      position: relative;
+      height: 40px;
+      border-left: 3px solid transparent;
+      opacity: 0.5; }
+      nav ul a li {
+        line-height: 40px;
+        padding-left: 60px;
+        font-family: 'Montserrat', Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 700;
+        display: block;
+        opacity: 1;
+        width: 100%; }
+      nav ul a:hover {
+        opacity: 1;
+        background-color: #293241;
+        border-left: 3px solid #15a4fa; }
+    nav ul a.active {
+      opacity: 1;
+      background-color: #293241;
+      border-left: 3px solid #15a4fa; }
+  nav .brand {
+    background-color: #47bac1;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    float: left;
+    width: 100%;
+    height: 75px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat; }
+  nav .user-info {
+    height: 75px;
+    width: 100%;
+    padding: 13.5px 20px;
+    color: #fff;
+    border-bottom: 2px solid #3d495d;
+    float: left;
+    margin-bottom: 20px; }
+    nav .user-info h1 {
+      font-size: 18px;
+      margin: 0;
+      line-height: 24px; }
+  nav .login {
+    background: #293241;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0; }
+    nav .login a {
+      width: calc(50% - 10px);
+      float: left;
+      display: block;
+      height: 35px;
+      margin: 0 5px;
+      font-weight: 700;
+      line-height: 35px;
+      background: #fff;
+      border-radius: 3px;
+      text-align: center;
+      text-transform: uppercase; }
+      nav .login a:hover {
+        color: #3fa5ab; }
+
+.content {
+  width: calc(100% - 260px);
+  float: left;
+  margin-left: 260px;
+  position: relative; }
+
+.inner-content {
+  width: 100%;
+  padding: 30px;
+  float: left; }
+
+.page-header {
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-family: 'Montserrat', Arial, san-serif;
+  line-height: 75px;
+  background: #fff;
+  padding-left: 40px;
+  text-transform: uppercase;
+  font-size: 26px; }
+  .page-header h1 {
+    margin: 0;
+    float: left;
+    font-size: 26px; }
+  .page-header .change-term {
+    float: left; }
+    .page-header .change-term ul {
+      float: left;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-left: 20px; }
+      .page-header .change-term ul li {
+        display: block;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 75px;
+        color: #47bac1;
+        cursor: pointer; }
+      .page-header .change-term ul li.has-dropdown {
+        position: relative; }
+        .page-header .change-term ul li.has-dropdown ul.dropdown {
+          z-index: 8;
+          background: #fff;
+          position: absolute;
+          border-top: 2px solid #eeeff3;
+          top: 75px;
+          left: 0px;
+          display: none;
+          margin: 0;
+          list-style: none; }
+          .page-header .change-term ul li.has-dropdown ul.dropdown li {
+            padding: 0 20px; }
+            .page-header .change-term ul li.has-dropdown ul.dropdown li a {
+              display: block;
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 40px; }
+            .page-header .change-term ul li.has-dropdown ul.dropdown li:hover {
+              background-color: #47bac1; }
+              .page-header .change-term ul li.has-dropdown ul.dropdown li:hover a {
+                color: #fff; }
+        .page-header .change-term ul li.has-dropdown:hover ul.dropdown {
+          display: block; }
+
+.timetable-info {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .timetable-info p {
+    line-height: 75px; }
+
+.semester-info {
+  margin-left: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  float: left; }
+  .semester-info p {
+    float: left;
+    width: 300px;
+    margin: 0;
+    margin-right: 20px; }
+  .semester-info .bad {
+    color: #ff616a; }
+  .semester-info .okay {
+    color: #e4c82f; }
+  .semester-info .good {
+    color: #15a4fa; }
+  .semester-info .great {
+    color: #47bac1; }
+
+.semester {
+  width: 100%;
+  float: left; }
+
+.cards {
+  width: 100%;
+  clear: both; }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: calc(100% + 260px);
+  height: 100vh;
+  top: 0px;
+  left: 0px; }
+
+.course-description {
+  position: fixed;
+  background: #fff;
+  width: 800px;
+  padding: 20px;
+  z-index: 10;
+  left: calc(50% - 400px);
+  top: 165px;
+  border-radius: 5px; }
+  .course-description .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #15a4fa;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-image: url("../images/close.svg");
+    background-position: center;
+    background-repeat: no-repeat; }
+    .course-description .close-btn:hover {
+      cursor: pointer;
+      background-color: #1394e1; }
+  .course-description h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 5px; }
+  .course-description h2 {
+    font-size: 18px;
+    margin: 0; }
+  .course-description h3 {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 500; }
+
+.card {
+  position: relative;
+  width: 300px;
+  background: #fff;
+  height: 159px;
+  float: left;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #eeeff3; }
+  .card .card-header {
+    background-color: #47bac1;
+    height: 40px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 0 20px; }
+    .card .card-header p {
+      width: 30%;
+      font-size: 16px;
+      margin: 0;
+      line-height: 40px;
+      color: #fff;
+      float: left;
+      font-weight: 700; }
+    .card .card-header p:first-child {
+      width: 70%; }
+  .card .card-body {
+    padding: 20px; }
+  .card h1 {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+    max-height: 22px;
+    overflow: hidden; }
+    .card h1:hover {
+      cursor: pointer;
+      color: #15a4fa; }
+  .card h2 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 5px; }
+  .card p {
+    font-size: 16px;
+    margin: 0; }
+    .card p span {
+      color: #47bac1;
+      font-weight: 700; }
+
+.teacher-card {
+  height: auto; }
+  .teacher-card h1:hover {
+    color: #293241;
+    cursor: default; }
+  .teacher-card a {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    background: #15a4fa;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px; }
+    .teacher-card a:hover {
+      background: #1394e1; }
+
+.grade-card {
+  padding: 20px;
+  height: auto; }
+  .grade-card h1:hover {
+    color: #293241;
+    cursor: default; }
+
+.admin-card {
+  padding: 20px;
+  height: auto;
+  width: calc(25% - 20px); }
+  .admin-card h1:hover {
+    color: #293241;
+    cursor: default; }
+
+.add-course-card {
+  width: calc(100% - 20px);
+  margin: 0 10px;
+  padding: 10px; }
+  .add-course-card input, .add-course-card select, .add-course-card label {
+    width: calc(25% - 20px) !important;
+    margin: 0 10px;
+    float: left; }
+  .add-course-card textarea {
+    margin: 0 10px;
+    width: calc(100% - 20px) !important; }
+  .add-course-card h1 {
+    margin-left: 10px;
+    margin-top: 10px; }
+  .add-course-card .add-course-button {
+    width: 300px !important;
+    height: 38px;
+    margin-left: 10px !important;
+    margin-bottom: 10px !important; }
+
+.hidden {
+  display: none; }
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0; }
+
+.login-form, .reg-form {
+  z-index: 5;
+  width: 300px;
+  height: 299px;
+  background: #fff;
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 3px;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 150px); }
+  .login-form .login-nav, .reg-form .login-nav {
+    height: 40px;
+    margin-bottom: 20px; }
+    .login-form .login-nav .signup, .reg-form .login-nav .signup {
+      display: block;
+      float: left;
+      width: 50%;
+      border-bottom: 2px solid #eeeff3;
+      line-height: 38px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: 'Montserrat', Arial, sans-serif; }
+      .login-form .login-nav .signup:hover, .reg-form .login-nav .signup:hover {
+        border-color: #47bac1; }
+    .login-form .login-nav .active, .reg-form .login-nav .active {
+      border-color: #47bac1; }
+  .login-form label, .reg-form label {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    color: #8a95a5;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 10px; }
+  .login-form input, .reg-form input {
+    width: 100%;
+    margin-bottom: 20px;
+    background: #fff;
+    color: #4e515e;
+    font-weight: 700;
+    border: 2px solid #eeeff3;
+    border-radius: 3px;
+    line-height: 35px;
+    padding: 0 15px;
+    font-size: 15px;
+    outline: 0; }
+  .login-form .submit-button, .reg-form .submit-button {
+    width: 100%;
+    background: #47bac1;
+    display: block;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0;
+    line-height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Montserrat', Arial, sans-serif;
+    border: 0;
+    color: #fff;
+    font-weight: 700; }
+    .login-form .submit-button:hover, .reg-form .submit-button:hover {
+      background: #3fa5ab; }
+
+.reg-form {
+  height: 557px; }
+
+.form label {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  color: #8a95a5;
+  font-weight: 700;
+  line-height: 38px; }
+.form input {
+  width: 100%;
+  background: #fff;
+  color: #4e515e;
+  font-weight: 700;
+  border: 2px solid #eeeff3;
+  border-radius: 3px;
+  line-height: 34px;
+  padding: 0 15px;
+  padding-right: 0;
+  font-size: 15px;
+  outline: 0;
+  margin-bottom: 10px; }
+.form textarea {
+  height: 80px;
+  width: 100%;
+  resize: none;
+  font-family: "Roboto", Arial, sans-serif;
+  background: #fff;
+  color: #4e515e;
+  font-weight: 700;
+  border: 2px solid #eeeff3;
+  border-radius: 3px;
+  line-height: 18px;
+  padding: 15px;
+  padding-right: 0;
+  font-size: 15px;
+  outline: 0;
+  margin-bottom: 10px; }
+.form select {
+  width: 100%;
+  background: #fff;
+  color: #4e515e;
+  font-weight: 700;
+  border: 2px solid #eeeff3;
+  border-radius: 3px;
+  line-height: 34px;
+  height: 38px;
+  padding: 0 15px;
+  padding-right: 0;
+  font-size: 15px;
+  outline: 0;
+  margin-bottom: 10px; }
+.form .submit-button {
+  background: #47bac1;
+  display: block;
+  outline: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0 15px;
+  margin: 0;
+  line-height: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'Montserrat', Arial, sans-serif;
+  border: 0;
+  color: #fff;
+  font-weight: 700; }
+  .form .submit-button:hover {
+    background: #3fa5ab; }
+.form .add-course-button {
+  width: 100%;
+  height: 38px; }
+
+.alert {
+  position: absolute;
+  top: 505px;
+  border: 2px solid;
+  padding: 10px 20px;
+  line-height: 20px;
+  text-align: center;
+  width: 300px;
+  left: calc(50% - 150px);
+  margin: 0 auto;
+  display: block; }
+
+.alert-danger {
+  border-color: #ff616a;
+  color: #ff616a; }
+
+.alert-success {
+  border-color: #47bac1;
+  color: #47bac1; }
+
+.add-class {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: block; }
+  .add-class button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 0;
+    cursor: pointer;
+    background-color: #15a4fa;
+    background-image: url("../images/add.svg");
+    background-position: center;
+    background-repeat: no-repeat; }
+    .add-class button:hover {
+      background-color: #1394e1; }
+
+.search-courses {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  float: left; }
+  .search-courses select, .search-courses input {
+    width: 298px;
+    margin-right: 24px;
+    float: left;
+    border-color: #fff; }
+
+.search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 0;
+  float: left;
+  cursor: pointer;
+  background-color: #15a4fa;
+  background-image: url("../images/search.svg");
+  background-position: center;
+  background-repeat: no-repeat; }
+  .search-btn:hover {
+    background-color: #1394e1; }
+
+.timetable-container {
+  width: 100%;
+  padding: 20px;
+  padding-top: 0px;
+  float: left;
+  background: #fff;
+  position: relative;
+  margin-bottom: 30px; }
+
+.timetable {
+  background: #fff;
+  float: left;
+  width: 100%;
+  position: relative; }
+  .timetable .line-vert {
+    height: 931px;
+    width: 2px;
+    background-color: #eeeff3;
+    position: absolute;
+    left: calc(16.666% - 1px);
+    top: 61px; }
+  .timetable .row-days {
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid #eeeff3; }
+    .timetable .row-days .day {
+      width: 16.666%;
+      float: left; }
+      .timetable .row-days .day h1 {
+        font-size: 18px;
+        margin: 0;
+        text-align: center;
+        line-height: 61px; }
+  .timetable .row-times {
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid #eeeff3; }
+    .timetable .row-times .times {
+      height: 60px;
+      width: 100%;
+      float: left;
+      position: relative; }
+      .timetable .row-times .times .line-mid {
+        width: calc(83.333%);
+        height: 2px;
+        background-color: #eeeff3;
+        position: absolute;
+        left: calc(16.666%);
+        top: calc(50% - 1px); }
+      .timetable .row-times .times h1 {
+        margin: 0;
+        line-height: 60px;
+        font-size: 18px; }
+
+.Mon {
+  left: calc(16.666% + 10px); }
+
+.Tue {
+  left: calc(33.332% + 10px); }
+
+.Wed {
+  left: calc(49.998% + 10px); }
+
+.Thu {
+  left: calc(66.664% + 10px); }
+
+.Fri {
+  left: calc(83.333% + 10px); }
+
+.three-hour {
+  height: 182px !important; }
+
+.eight-thirty {
+  top: 95px; }
+
+.ten-am {
+  top: 188px; }
+
+.eleven-thirty {
+  top: 281px; }
+
+.one-pm {
+  top: 374px; }
+
+.two-thirty {
+  top: 467px; }
+
+.four-pm {
+  top: 560px; }
+
+.five-thirty {
+  top: 653px; }
+
+.seven-pm {
+  top: 746px; }
+
+.eight-thirty-pm {
+  top: 839px; }
+
+.timetable-card {
+  background: #354052;
+  float: left;
+  height: 89px;
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  width: calc(16.666% - 20px); }
+  .timetable-card .card-header {
+    background-color: #47bac1;
+    height: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px; }
+    .timetable-card .card-header p {
+      width: 100%;
+      font-size: 14px;
+      margin: 0;
+      line-height: 20px;
+      text-align: center; }
+  .timetable-card .card-body {
+    padding: 10px; }
+    .timetable-card .card-body h1 {
+      font-size: 14px;
+      height: 18px;
+      margin: 0;
+      overflow: hidden; }
+      .timetable-card .card-body h1:hover {
+        cursor: pointer;
+        color: #15a4fa; }
+    .timetable-card .card-body h2 {
+      font-size: 12px;
+      overflow: hidden;
+      line-height: 18px;
+      height: 18px;
+      margin: 0;
+      font-weight: 500; }
+      .timetable-card .card-body h2 span {
+        color: #47bac1; }
+
+.transparent {
+  opacity: 0; }

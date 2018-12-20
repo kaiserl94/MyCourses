@@ -1,0 +1,19 @@
+<h1 class="page-header">Course Manager</h1>
+
+<div class="inner-content transparent">
+	{{#each data as |course|}}
+	<div class="card teacher-card">
+		<div class="card-header">
+			<p class="time">{{course.start_time}} - {{course.end_time}}</p>
+			<p>{{course.days}}</p>
+		</div>
+		<div class="card-body">
+			<h1 class="{{course.course_code}}">{{course.course_name}}</h1>
+			<h2>{{course.course_code}}</h2>
+			<a href="/course-manager/{{course.course_code}}">Grade Students</a>
+		</div>
+	</div>
+	{{/each}}
+</div>
+
+<script src="../javascripts/timeFormatter.js"></script>

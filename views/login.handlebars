@@ -1,0 +1,23 @@
+{{#if errors}}
+	<div class="alert alert-danger">
+		{{#each errors}}
+			<div>
+				{{msg}}
+			</div>
+		{{/each}}
+	</div>
+{{/if}}
+
+<div  class="login-form">
+    <div class="login-nav">
+        <a href="/u/login" class="signup active">Log In</a>
+        <a href="/u/register" class="signup">Sign Up</a>
+    </div>
+    <form method="post" action="/u/login">
+        <label>Username</label>
+        <input type="text" name="username" required/>
+        <label>Password</label>
+        <input type="password" name="password" required/>
+        <button type="submit" class="submit-button">Log In</button>
+    </form>    
+</div>

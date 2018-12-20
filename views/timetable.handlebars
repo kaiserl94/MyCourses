@@ -1,0 +1,207 @@
+<div class="page-header">
+	<h1>{{title}}</h1>
+	<div class="change-term">
+		<ul>
+			<li class="has-dropdown">
+				{{data.semester}}
+				<ul class="dropdown">
+					{{#each semesters as |semester|}}
+						<li><a href="/timetable/{{semester.semester_code}}">{{semester.semester_code}}</a></li>
+					{{/each}}
+				</ul>
+			</li>
+		</ul>	
+	</div>
+</div>
+
+<div class="semester-info timetable-info">
+	<p>Average: <b id="avg">{{data.average}}%</b></p>
+	<p>Standing: <b class="standing"></b></p> 
+</div>
+
+<div class="inner-content transparent">
+	<div class="timetable-container">
+	<div class="timetable" id="timetable-cards">
+		<div class="line-vert one"></div>
+		<div class="line-vert two"></div>
+		<div class="line-vert three"></div>
+		<div class="line-vert four"></div>
+		<div class="line-vert five"></div>
+
+		<div class="row-days">
+			<div class="day">
+				<h1>Time</h1>
+			</div>
+			<div class="day">
+				<h1>Monday</h1>
+			</div>
+			<div class="day">
+				<h1>Tuesday</h1>
+			</div>
+			<div class="day">
+				<h1>Wednesday</h1>
+			</div>
+			<div class="day">
+				<h1>Thursday</h1>
+			</div>
+			<div class="day">
+				<h1>Friday</h1>
+			</div>
+		</div>
+		<div class="row-times border-top">
+			<div class="times">
+				<h1>8:00 AM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>9:00 AM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>10:00 AM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>11:00 AM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>12:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>1:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>2:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>3:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>4:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>5:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>6:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>7:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>8:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>9:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+		
+		<div class="row-times">
+			<div class="times">
+				<h1>10:00 PM</h1>
+				<div class="line-mid"></div>
+			</div>
+		</div>
+
+		{{#each data as |course|}}
+			<div class="timetable-card {{course.days}}">
+				<div class="card-header">
+					<p class="time">{{course.start_time}} - {{course.end_time}}</p>
+				</div>
+				<div class="card-body">
+					<h1 class="{{course.course_code}}">{{course.course_name}}</h1>
+					<h2>{{course.course_code}}</h2>
+					<h2>Grade: {{#if course.grade}}<span>{{course.grade}}%</span>{{else}}N/A{{/if}}</h2>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+	</div>
+	
+	<script src="../javascripts/timeFormatter.js"></script>
+	<script src="../javascripts/standing.js"></script>
+	<script src="../javascripts/timetableClone.js"></script>
+	<script src="../javascripts/timetableFormatter.js"></script>
+</div>
+
+{{#each data as |course|}}
+	<div class="course-description hidden" id="{{course.course_code}}_description">
+		<h1>{{course.course_name}}</h1>
+		<h2>{{course.course_code}}</h2>
+		<h3>Instructor: {{course.instructor_fname}}  {{course.instructor_lname}}</h3>
+		<p>{{course.description}}</p>
+
+		<div class="close-btn" id="{{course_code}}_close"></div>
+	</div>
+{{/each}}
+
+
+<div class="overlay hidden"></div>
+
+<script>
+	{{#each data as |course|}}
+		$(".{{course.course_code}}").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+
+		$("#" + "{{course.course_code}}" + "_close").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+	{{/each}}
+</script>

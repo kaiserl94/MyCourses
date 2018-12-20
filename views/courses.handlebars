@@ -1,0 +1,83 @@
+<h1 class="page-header">Course Planner</h1>
+
+<div class="inner-content transparent">
+	<form class="search-courses form" method="post" action="/courses/search">
+		<select name="semester">
+			<option value="{{semesters.searchSemester}}" selected hidden>{{semesters.searchSemester}}</option>
+			<option value="Semester">All</option>
+			{{#each semesters as |semester|}}
+				<option value="{{semester.semester_code}}">{{semester.semester_code}}</option>
+			{{/each}}
+		</select>
+		<select name="faculty">
+			<option value="{{semesters.searchFaculty}}" selected hidden>{{semesters.searchFaculty}}</option>
+			<option value="Subject">All</option>
+			{{#each faculties as |faculty|}}
+				<option value="{{faculty.faculty}}">{{faculty.faculty}}</option>
+			{{/each}}
+		</select>
+		<select name="level">
+			<option value="{{semesters.searchLevel}}" selected hidden>{{semesters.searchLevel}}</option>
+			<option value="Course Level">Course Level</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<input type="text" name="course" placeholder="Course Code, Ex. 03-60-499-01, 03-60" pattern="[0-9-]+"/>
+		<button type="submit" class="search-btn"></button>
+	</form>
+	<div class="cards">
+		{{#each data as |course|}}             
+			<div class="card">
+				<div class="card-header">
+					<p class="time">{{course.start_time}} - {{course.end_time}} - {{course.days}}</p>
+					<p>{{course.days}}</p>
+				</div>
+				<div class="card-body">
+					<h1 id="{{course_code}}_card">{{course.course_name}}</h1>
+					<h2>{{course.course_code}}</h2>
+					<p>Instructor: {{course.instructor_fname}}  {{course.instructor_lname}}</span></p>
+					<form class="add-class" method="post" action="/courses">
+						<input class="hidden" name="course" type="text" value="{{course.course_code}}"/>
+						<input class="hidden" name="semester" type="text" value="{{course.semester_code}}"/>
+						<button type="submit" title="Add Course"></button>
+					</form>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+	
+</div>
+
+{{#each data as |course|}}
+	<div class="course-description hidden" id="{{course_code}}_description">
+		<h1>{{course.course_name}}</h1>
+		<h2>{{course.course_code}}</h2>
+		<h3>Instructor: {{course.instructor_fname}}  {{course.instructor_lname}}</h3>
+		<p>{{course.description}}</p>
+
+		<div class="close-btn" id="{{course_code}}_close"></div>
+	</div>
+{{/each}}
+<div class="overlay hidden"></div>
+
+<script>
+	{{#each data as |course|}}
+		$("#" + "{{course.course_code}}" + "_card").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+
+		$("#" + "{{course.course_code}}" + "_close").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+	{{/each}}
+</script>
+<script src="../javascripts/timeFormatter.js"></script>

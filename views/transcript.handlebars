@@ -1,0 +1,102 @@
+<h1 class="page-header">My Transcript</h1>
+
+<div class="inner-content transparent">
+    {{#each data as |semester|}}
+        <div class="semester">
+            <div class="semester-info">
+                <p>Semester: <b><a href="/transcript/{{semester.name}}">{{semester.name}}</a></b></p>
+                <p>Average: <b id="avg_{{@key}}">{{semester.average}}%</b></p>
+                <p>Standing: <b class="standing_{{@key}}">Good Standing</b></p> 
+            </div>
+            <div class="cards">
+            {{#each semester.courses as |course|}}
+                <div class="card">
+                    <div class="card-header">
+                        <p class="time">{{course.start_time}} - {{course.end_time}} - {{course.days}}</p>
+                        <p>{{course.days}}</p>
+                    </div>
+                    <div class="card-body">
+                        <h1 id="{{course.course_code}}_card">{{course.course_name}}</h1>
+                        <h2>{{course.course_code}}</h2>
+                        <p>Grade: {{#if course.grade}}<span>{{course.grade}}%</span>{{else}}N/A{{/if}}</p>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+        </div>
+    {{/each}}
+    
+</div>
+{{#each data as |semester|}}
+    {{#each semester.courses as |course|}}
+        <div class="course-description hidden" id="{{course.course_code}}_description">
+            <h1>{{course.course_name}}</h1>
+            <h2>{{course.course_code}}</h2>
+            <h3>Instructor: {{course.instructor_fname}}  {{course.instructor_lname}}</h3>
+            <p>{{course.description}}</p>
+
+            <div class="close-btn" id="{{course_code}}_close"></div>
+        </div>
+    {{/each}}
+{{/each}}
+	
+<div class="overlay hidden"></div>		
+<script>
+    {{#each data as |semester|}}
+    
+        {{#each semester.courses as |course|}}
+        $("#" + "{{course.course_code}}" + "_card").click(function()
+        {
+            $("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+            
+            $(".overlay").toggleClass("hidden");
+        });
+
+        $("#" + "{{course.course_code}}" + "_close").click(function()
+        {
+            $("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+            
+            $(".overlay").toggleClass("hidden");
+        });
+        {{/each}}
+    {{/each}}
+</script>
+
+<script>
+    for (var i = 0; i < {{data.semesters}}; ++i)
+    {
+        var average = $("#avg_" + i).text();
+        var avg = $("#avg_" + i);
+        var standing = $(".standing_" + i);
+
+        average = average.substring(0, average.length-1);
+
+        if (average < 50)
+        {
+            avg.addClass("bad");
+            standing.text("Bad Standing");
+            standing.addClass("bad");
+        }
+        else if (average < 75)
+        {
+            avg.addClass("okay");
+            standing.text("Okay Standing");
+            standing.addClass("okay");
+
+        }
+        else if (average < 90)
+        {
+            avg.addClass("good");
+            standing.text("Good Standing");
+            standing.addClass("good");
+        }
+        else
+        {
+            avg.addClass("great");
+            standing.text("Great Standing");
+            standing.addClass("great");
+        }
+    }
+</script>
+
+<script src="../javascripts/timeFormatter.js"></script>

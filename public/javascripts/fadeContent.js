@@ -1,0 +1,1 @@
+$('.inner-content').removeClass("transparent");

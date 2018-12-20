@@ -1,0 +1,1200 @@
+@import "compass";
+
+//Variables
+$border-color:            #eeeff3;
+$accent-blue: 				    #15a4fa;
+$accent-blue-hover:       #1394e1;
+$accent-green: 				    #47bac1;
+$accent-red:              #ff616a;
+$accent-yellow:           #e4c82f;
+$accent-color:            #47bac1;
+$accent-color-hover:      #3fa5ab;
+$accent-black: 				    #293241;
+$accent-black-light:      #354052;
+$accent-gray:             #4e515e;
+$color-bg:					      #ebf1f5;
+$nav-height:                70px;
+$nav-margin:                (($nav-height - 31px) / 2px) + px;
+$weight-light:              300;
+$weight-normal: 			      400;
+$weight-medium: 		      	500;
+$weight-bold: 				      700;
+$weight-extrabold: 	        900;
+$gutter-space:              40px;
+$font-stack-body:			      "Roboto", Helvetica, Arial, sans-serif;
+$large: 1300px;
+$medium: 950px;
+$small: 750px;
+$extrasmall: 400px;
+
+
+.transition
+{
+    transition: all 0.3s ease;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.slow-transition
+{
+    transition: all 0.75s ease;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.box-shadow
+{
+    -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.02), 0px 8px 10px 1px rgba(0,0,0,0.02), 0px 3px 14px 2px rgba(0,0,0,0.02);
+    -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.02), 0px 8px 10px 1px rgba(0,0,0,0.02), 0px 3px 14px 2px rgba(0,0,0,0.02);
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.02), 0px 8px 10px 1px rgba(0,0,0,0.02), 0px 3px 14px 2px rgba(0,0,0,0.02);
+}
+
+.box-shadow-dark
+{
+    -webkit-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.3), 0px 8px 10px 1px rgba(0,0,0,0.3), 0px 3px 14px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.3), 0px 8px 10px 1px rgba(0,0,0,0.3), 0px 3px 14px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.3), 0px 8px 10px 1px rgba(0,0,0,0.3), 0px 3px 14px 2px rgba(0,0,0,0.3);
+}
+
+button
+{
+  outline: 0;
+  &:hover, &:active, &:focus
+  {
+    outline: 0;
+  }
+}
+
+body 
+{
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background: $color-bg;
+  color: $accent-black;
+}
+
+*
+{
+  box-sizing: border-box;
+}
+
+a 
+{
+  color: $accent-color;
+  text-decoration: none;
+}
+
+input:-webkit-autofill
+{
+    -webkit-text-fill-color: $accent-gray;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.header-brand
+{
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: $weight-medium;
+    float: left;
+    width: 100%;
+    height: 75px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav
+{
+  width: 260px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: $accent-black-light;
+  @extend .box-shadow;
+
+  ul
+  {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    float: left;
+    li
+    {
+      padding-left: 20px;
+      color: #fff;
+      font-weight: $weight-bold;
+      font-size: 14px;
+      line-height: 14px;
+      margin-bottom: 6px;
+      opacity: 0.3;
+    }
+    
+    .nav-btn
+    {
+      position: relative;
+      &::before
+      {
+        content: "";
+        display: block;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        left: 20px;
+        background-position: center;
+      }
+    }
+    .home
+    {
+      &::before
+      {
+        background-image: url("../images/home.svg");
+      }
+    }
+    .transcript
+    {
+      &::before
+      {
+        background-image: url("../images/transcript.svg");
+      }
+    }
+    .courses
+    {
+      &::before
+      {
+        background-image: url("../images/courses.svg");
+      }
+    }
+    .course-manager
+    {
+      &::before
+      {
+        background-image: url("../images/calender.svg");
+      }
+    }
+    .dash
+    {
+      &::before
+      {
+        background-image: url("../images/dashboard.svg");
+      }
+    }
+
+    a
+    {
+      display: block;
+      position: relative;
+      height: 40px;
+      border-left: 3px solid transparent;
+      opacity: 0.5;
+      @extend .transition;
+      li
+      {
+        line-height: 40px;
+        padding-left: 60px;
+        font-family: 'Montserrat', Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #fff;
+        font-weight: $weight-bold;
+        display: block;
+        opacity: 1;
+        width: 100%;
+      }
+      &:hover
+      {
+        opacity: 1;
+        background-color: $accent-black;
+        border-left: 3px solid $accent-blue;
+      }
+    }
+    a.active
+    {	
+      opacity: 1;
+      background-color: $accent-black;
+      border-left: 3px solid $accent-blue;
+    }
+  }
+
+  .brand
+  {
+    background-color: $accent-color;
+    color: #fff;
+    font-size: 14px;
+    font-weight: $weight-medium;
+    float: left;
+    width: 100%;
+    height: 75px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+  }
+
+  .user-info
+  {
+    height: 75px;
+    width: 100%;
+    padding: 13.5px 20px;
+    color: #fff;
+    border-bottom: 2px solid #3d495d;
+    float: left;
+    margin-bottom: 20px;
+    h1
+    {
+      font-size: 18px;
+      margin: 0;
+      line-height: 24px;
+    }
+  }
+
+  .login
+  {
+    background: $accent-black;
+    color: #fff;
+    font-size: 14px;
+    font-weight: $weight-medium;
+    float: left;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+
+    a
+    {
+      width: calc(50% - 10px);
+      float: left;
+      display: block;
+      height: 35px;
+      margin: 0 5px;
+      font-weight: $weight-bold;
+      line-height: 35px;
+      background: #fff;
+      border-radius: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      @extend .transition;
+
+      &:hover
+      {
+		@extend .box-shadow;
+		color: $accent-color-hover;
+      }
+    }
+  }
+}
+
+.content
+{
+	width: calc(100% - 260px);
+	float: left;
+	margin-left: 260px;
+	position: relative;
+}
+
+.inner-content
+{
+  width: 100%;
+  padding: 30px;
+  float: left;
+  @extend .slow-transition;
+}
+
+.page-header
+{
+	float: left;
+	width: 100%;
+	margin: 0;
+	font-family: 'Montserrat', Arial, san-serif;
+	line-height: 75px;
+	background: #fff;
+	padding-left: 40px;
+	text-transform: uppercase;
+	font-size: 26px;
+	
+	h1
+	{
+		margin: 0;
+		float: left;
+		font-size: 26px;
+	}
+
+	.change-term
+	{
+		float: left;
+		ul
+		{
+			float: left;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			margin-left: 20px;
+
+			li
+			{
+				display: block;
+				font-size: 26px;
+				font-weight: $weight-bold;
+				line-height: 75px;
+				color: $accent-color;
+				cursor: pointer;
+			}
+
+			li.has-dropdown
+			{
+				position: relative;
+				ul.dropdown
+				{
+					z-index: 8;
+					background: #fff;
+					position: absolute;
+					border-top: 2px solid $border-color;
+					top: 75px;
+					left: 0px;
+					display: none;
+					margin: 0;
+					list-style: none;
+					@extend .box-shadow;
+		
+					li
+					{
+						padding: 0 20px;
+						@extend .transition;
+
+						a
+						{
+							display: block;
+							font-size: 18px;
+							font-weight: $weight-bold;
+							line-height: 40px;
+						}
+
+						&:hover
+						{
+							background-color: $accent-color;
+							a
+							{
+								color: #fff;
+							}
+						}
+					}
+				}
+
+				&:hover
+				{
+					ul.dropdown
+					{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+.timetable-info
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  p
+  {
+    line-height: 75px;
+  }
+}
+
+.semester-info
+{
+	margin-left: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  float: left;
+  p
+  {
+    float: left;
+    width: 300px;
+    margin: 0;
+    margin-right: 20px;
+  }
+
+  .bad
+  {
+    color: $accent-red;
+  }
+  .okay
+  {
+    color: $accent-yellow;
+  }
+  .good
+  {
+    color: $accent-blue;
+  }
+  .great
+  {
+    color: $accent-color;
+  }
+}
+
+.semester
+{
+  width: 100%;
+  float: left;
+}
+
+.cards
+{
+  width: 100%;
+  clear: both;
+}
+
+.overlay
+{
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  width: calc(100% + 260px);
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+}
+
+.course-description
+{
+  position: fixed;
+  background: #fff;
+  width: 800px;
+  padding: 20px;
+  z-index: 10;
+  left: calc(50% - 400px);
+  top: 165px;
+  border-radius: 5px;
+  @extend .box-shadow;
+
+  .close-btn
+  {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: $accent-blue;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+
+    background-image: url("../images/close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @extend .transition;
+
+    &:hover
+    {
+      cursor: pointer;
+      background-color: $accent-blue-hover;
+    }
+  }
+
+  h1
+	{
+		font-size: 24px;
+    margin: 0;
+		margin-bottom: 5px;
+  }
+  
+  h2
+  {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  h3
+  {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: $weight-medium;
+  }
+}
+
+
+.card
+{
+	position: relative;
+	width: 300px;
+	background: #fff;
+	height: 159px;
+	float: left;
+	margin: 0 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 2px solid $border-color;
+  
+	.card-header
+	{
+		background-color: $accent-color;
+		height: 40px;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+		padding: 0 20px;
+		p
+		{
+			width: 30%;
+			font-size: 16px;
+			margin: 0;
+			line-height: 40px;
+			color: #fff;
+			float: left;
+			font-weight: $weight-bold;
+		}
+		p:first-child
+		{
+			width: 70%;
+		}
+	}
+
+	.card-body
+	{
+		padding: 20px;
+	}
+	
+	h1
+	{
+		font-size: 18px;
+		margin: 0;
+		margin-bottom: 10px;
+		max-height: 22px;
+		overflow: hidden;
+		@extend .transition;
+
+		&:hover
+		{
+			cursor: pointer;
+			color: $accent-blue;
+		}
+	}
+
+	h2
+	{
+		font-size: 16px;
+		margin: 0;
+		margin-bottom: 5px;
+	}
+
+	p
+	{
+		font-size: 16px;
+		margin: 0;
+		span
+		{
+			color: $accent-green;
+			font-weight: $weight-bold;
+		}
+	}
+}
+
+.teacher-card
+{
+  height: auto;
+  h1
+  {
+    &:hover
+    {
+      color: $accent-black;
+      cursor: default;
+    }
+  }
+  a
+  {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: $weight-bold;
+    font-size: 14px;
+    display: block;
+    background: $accent-blue;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    @extend .transition;
+    &:hover
+    {
+      background: $accent-blue-hover;
+    }
+  }
+}
+
+.grade-card
+{
+  padding: 20px;
+  height: auto;
+  h1
+  {
+    &:hover
+    {
+      color: $accent-black;
+      cursor: default;
+    }
+  }
+}
+
+.admin-card
+{
+  padding: 20px;
+  height: auto;
+  width: calc(25% - 20px);
+  h1
+  {
+    &:hover
+    {
+      color: $accent-black;
+      cursor: default;
+    }
+  }
+}
+
+.add-course-card
+{
+  width: calc(100% - 20px);
+  margin: 0 10px;
+  padding: 10px;
+
+  input, select, label
+  {
+    width: calc(25% - 20px)!important;
+    margin: 0 10px;
+    float: left;
+  }
+  textarea
+  {
+    margin: 0 10px;
+    width: calc(100% - 20px)!important;
+  }
+  h1
+  {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .add-course-button
+  {
+    width: 300px!important;
+    height: 38px;
+    margin-left: 10px!important;
+    margin-bottom: 10px!important;
+  }
+}
+
+.hidden
+{
+  display: none;
+}
+
+.modal-overlay
+{
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.login-form
+{
+  .login-nav
+  {
+    height: 40px;
+    margin-bottom: 20px;
+
+    .signup
+    {
+      display: block;
+      float: left;
+      width: 50%;
+      border-bottom: 2px solid $border-color;
+      line-height: 38px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: $weight-bold;
+      font-family: 'Montserrat', Arial, sans-serif;
+
+      &:hover
+      {
+        border-color: $accent-color;
+      }
+    }
+
+    .active
+    {
+      border-color: $accent-color;
+    }
+  }
+
+  z-index: 5;
+  width: 300px;
+  height: 299px;
+  background: #fff;
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 3px;
+  position: absolute;
+  top: 100px;
+  left: calc(50% - 150px);
+  label
+  {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    color: #8a95a5;
+    font-weight: $weight-bold;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  input
+  {
+    width: 100%;
+    margin-bottom: 20px;
+    background: #fff;
+    color: $accent-gray;;
+    font-weight: $weight-bold;
+    border: 2px solid $border-color;
+    border-radius: 3px;
+    line-height: 35px;
+    padding: 0 15px;
+    font-size: 15px;
+    outline: 0;
+  }
+  .submit-button
+  {
+    width: 100%;
+    background: $accent-color;
+    display: block;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0;
+    line-height: 40px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Montserrat', Arial, sans-serif;
+    border: 0;
+    color: #fff;
+    font-weight: $weight-bold;
+    @extend .transition;
+
+    &:hover
+    {
+      background: $accent-color-hover;
+    }
+  }
+}
+
+.reg-form
+{
+  @extend .login-form;
+  height: 557px;
+}
+
+.form
+{
+  label
+  {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    color: #8a95a5;
+    font-weight: $weight-bold;
+    line-height: 38px;
+  }
+  input
+  {
+    width: 100%;
+    background: #fff;
+    color: $accent-gray;;
+    font-weight: $weight-bold;
+    border: 2px solid $border-color;
+    border-radius: 3px;
+    line-height: 34px;
+    padding: 0 15px;
+    padding-right: 0;
+    font-size: 15px;
+    outline: 0;
+    margin-bottom: 10px;
+  }
+  textarea
+  {
+    height: 80px;
+    width: 100%;
+    resize: none;
+    font-family: "Roboto", Arial, sans-serif;
+    background: #fff;
+    color: $accent-gray;;
+    font-weight: $weight-bold;
+    border: 2px solid $border-color;
+    border-radius: 3px;
+    line-height: 18px;
+    padding:15px;
+    padding-right: 0;
+    font-size: 15px;
+    outline: 0;
+    margin-bottom: 10px;
+  }
+  select
+  {
+    width: 100%;
+    background: #fff;
+    color: $accent-gray;;
+    font-weight: $weight-bold;
+    border: 2px solid $border-color;
+    border-radius: 3px;
+    line-height: 34px;
+    height: 38px;
+    padding: 0 15px;
+    padding-right: 0;
+    font-size: 15px;
+    outline: 0;
+    margin-bottom: 10px;
+  }
+  .submit-button
+  {
+    background: $accent-color;
+    display: block;
+    outline: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 0 15px;
+    margin: 0;
+    line-height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Montserrat', Arial, sans-serif;
+    border: 0;
+    color: #fff;
+    font-weight: $weight-bold;
+    @extend .transition;
+
+    &:hover
+    {
+      background: $accent-color-hover;
+    }
+  }
+  .add-course-button
+  {
+    width: 100%;
+    height: 38px;
+  }
+}
+
+.alert
+{
+  position: absolute;
+  top: 505px;
+  border: 2px solid;
+  padding: 10px 20px;
+  line-height: 20px;
+  text-align: center;
+  width: 300px;
+  left: calc(50% - 150px);
+  margin: 0 auto;
+  display: block;
+}
+
+.alert-danger
+{
+  border-color: $accent-red;
+  color: $accent-red;
+}
+
+.alert-success
+{
+  border-color: $accent-green;
+  color: $accent-green;
+}
+
+.add-class
+{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+
+  button
+  {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 0;
+    cursor: pointer;
+    background-color: $accent-blue;
+    background-image: url("../images/add.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    @extend .transition;
+
+    &:hover
+    {
+      background-color: $accent-blue-hover;
+      @extend .box-shadow;
+    }
+  }
+}
+
+.search-courses
+{
+	margin-bottom: 10px;
+	margin-left: 10px;
+	float: left;
+	select, input
+	{
+		width: 298px;
+		margin-right: 24px;
+		float: left;
+		border-color: #fff;
+	}
+}
+
+.search-btn
+{
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 0;
+  float: left;
+  cursor: pointer;
+  background-color: $accent-blue;
+  background-image: url("../images/search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  @extend .transition;
+
+  &:hover
+  {
+    background-color: $accent-blue-hover;
+    @extend .box-shadow;
+  }
+}
+
+.timetable-container
+{
+  width: 100%;
+  padding: 20px;
+  padding-top: 0px;
+  float: left;
+  background: #fff;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timetable
+{
+  background: #fff;
+  float: left;
+  width: 100%;
+  position: relative;
+
+  .line-vert
+  {
+    height: 931px;
+    width: 2px;
+    background-color: $border-color;
+    position: absolute;
+    left: calc(16.666% - 1px);
+    top: 61px;
+  }
+
+  .row-days
+  {
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid $border-color;
+
+    .day
+    {
+      width: 16.666%;
+      float: left;
+
+      h1
+      {
+        font-size: 18px;
+        margin: 0;
+        text-align: center;
+        line-height: 61px;
+      }
+    }
+  }
+
+  .row-times
+  {
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid $border-color;
+
+    .times
+    {
+      height: 60px;
+      width: 100%;
+      float: left;
+      position: relative;
+
+      .line-mid
+      {
+        width: calc(83.333%);
+        height: 2px;
+        background-color: $border-color;
+        position: absolute;
+        left: calc(16.666%);
+        top: calc(50% - 1px);
+      }
+
+      h1
+      {
+        margin: 0;
+        line-height: 60px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.Mon
+{
+  left: calc(16.666% + 10px);
+}
+
+.Tue
+{
+  left: calc(33.332% + 10px);
+}
+
+.Wed
+{
+  left: calc(49.998% + 10px);
+}
+
+.Thu
+{
+  left: calc(66.664% + 10px);
+}
+
+.Fri
+{
+  left: calc(83.333% + 10px);
+}
+
+.three-hour
+{
+  height: 182px!important;
+}
+
+.eight-thirty
+{
+  top: 95px;
+}
+
+.ten-am
+{
+  top: 188px;
+}
+
+.eleven-thirty
+{
+  top: 281px;
+}
+
+.one-pm
+{
+  top: 374px;
+}
+
+.two-thirty
+{
+  top: 467px;
+}
+
+.four-pm
+{
+  top: 560px;
+}
+
+.five-thirty
+{
+  top: 653px;
+}
+
+.seven-pm
+{
+  top: 746px;
+}
+
+.eight-thirty-pm
+{
+  top: 839px;
+}
+
+.timetable-card
+{
+  background: $accent-black-light;
+  float: left;
+  height: 89px;
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  width: calc(16.666% - 20px);
+
+  .card-header
+  {
+    background-color: $accent-color;
+    height: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    p
+    {
+      width: 100%;
+      font-size: 14px;
+      margin: 0;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  .card-body
+  {
+    padding: 10px; 
+    h1
+    {
+      font-size: 14px;
+      height: 18px;
+      margin: 0;
+      @extend .transition;
+      overflow: hidden;
+
+      &:hover
+      {
+        cursor: pointer;
+        color: $accent-blue;
+      }
+    } 
+
+    h2
+    {
+      font-size: 12px;
+      overflow: hidden;
+      line-height: 18px;
+      height: 18px;
+      margin: 0;
+      font-weight: $weight-medium;
+
+      span
+      {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+.transparent
+{
+	opacity: 0;
+}

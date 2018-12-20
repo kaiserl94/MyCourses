@@ -1,2 +1,1 @@
-# MyCourses
-Course Management Website
+DEBUG=415Website:* nodemon

@@ -1,0 +1,60 @@
+<h1 class="page-header">My Transcript</h1>
+
+<div class="inner-content transparent">
+	<div class="semester">
+		<div class="semester-info">
+			<p>Semester: <b>{{data.semester}}</b></p>
+			<p>Average: <b id="avg">{{data.average}}%</b></p>
+			<p>Standing: <b class="standing"></b></p> 
+		</div>
+		<div class="cards">
+		{{#each data as |course|}}
+			<div class="card">
+				<div class="card-header">
+					<p class="time">{{course.start_time}} - {{course.end_time}}</p>
+					<p>{{course.days}}</p>
+				</div>
+				<div class="card-body">
+					<h1 id="{{course.course_code}}_card">{{course.course_name}}</h1>
+					<h2>{{course.course_code}}</h2>
+					<p>Grade: {{#if course.grade}}<span>{{course.grade}}%</span>{{else}}N/A{{/if}}</p>
+				</div>
+			</div>
+		{{/each}}
+		</div>
+	</div>
+</div>
+
+{{#each data as |course|}}
+	<div class="course-description hidden" id="{{course.course_code}}_description">
+		<h1>{{course.course_name}}</h1>
+		<h2>{{course.course_code}}</h2>
+		<h3>Instructor: {{course.instructor_fname}}  {{course.instructor_lname}}</h3>
+		<p>{{course.description}}</p>
+
+		<div class="close-btn" id="{{course_code}}_close"></div>
+	</div>
+{{/each}}
+
+<div class="overlay hidden"></div>
+
+<script>
+	{{#each data as |course|}}
+		$("#" + "{{course.course_code}}" + "_card").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+
+		$("#" + "{{course.course_code}}" + "_close").click(function()
+		{
+			$("#" + "{{course.course_code}}" + "_description").toggleClass("hidden");
+			
+			$(".overlay").toggleClass("hidden");
+		});
+	{{/each}}
+</script>
+
+<script src="../javascripts/timeFormatter.js"></script>
+<script src="../javascripts/standing.js"></script>
